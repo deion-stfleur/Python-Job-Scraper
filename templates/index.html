@@ -1,0 +1,75 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/templates/index.css" rel="stylesheet">
+    <title>Property Listings</title>
+</head>
+<style>
+   .primary-img {
+    height: 400px;
+    width: 500px;
+    border-radius: 4px;
+}
+.left-panel {
+            width: 11%;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .filter {
+            margin-bottom: 10px;
+        }
+
+        .main-panel-container {
+            display: flex;
+        }
+
+        .right-panel {
+            width: 87%;
+        }
+
+</style>
+<body>
+    <h1>Property Listings</h1>
+
+    <div class="main-panel-container">
+        <div class="left-panel">
+            <h2>Filters</h2>
+            <div class="filter">
+                <!-- <input type="checkbox" id="sale" name="sale"> -->
+                <label for="sale">Sale</label>
+            </div>
+            <div class="filter">
+                <!-- <input type="checkbox" id="pending" name="pending"> -->
+                <label for="pending">Pending</label>
+            </div>
+            <div class="filter">
+                <!-- <input type="checkbox" id="sold" name="sold"> -->
+                <label for="sold">Sold</label>
+            </div>
+            <div class="filter">
+                <!-- <input type="checkbox" id="sold" name="sold"> -->
+                <label for="sold">Charts</label>
+            </div>
+        </div>
+        <ul class="right-panel">
+            {% for property in properties %}
+            <li>
+                <ul>
+                    {% for key, value in property.items() %}
+                        {% if key == 'primary_photo' %}
+                            <li>
+                                <img class="primary-img" src="{{ value }}" alt="Primary Photo">
+                            </li>
+                        {% else %}
+                            <li>{{ key }}: {{ value }}</li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </li>
+        {% endfor %}
+        </ul>
+
+    </div>
+</body>
+</html>
