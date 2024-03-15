@@ -5,32 +5,209 @@
     <link href="/templates/index.css" rel="stylesheet">
     <title>Property Listings</title>
 </head>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Get all filter buttons
+        var filterBtns = document.querySelectorAll('.filter-btn');
+
+        // Add click event listener to each button
+        filterBtns.forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                // Get the filter value from data attribute
+                var filterValue = this.dataset.filter;
+
+                // Hide all content divs
+                var contents = document.querySelectorAll('.content');
+                contents.forEach(function(content) {
+                    content.style.display = 'none';
+                });
+
+                // Show the content div corresponding to the filter value
+                var targetContent = document.querySelector('.content.' + filterValue);
+                if (targetContent) {
+                    targetContent.style.display = 'block';
+                }
+            });
+        });
+    });
+</script>
 <style>
-   .primary-img {
-    height: 400px;
-    width: 500px;
-    border-radius: 4px;
+.primary-img {
+    width: 270px;
+    display: flex;
+    flex-wrap: wrap;
+    height: 175px;
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 1px solid transparent;
 }
+
+
+.primary-img:hover {
+    border: 1px solid black;
+}
+
+.btn-row {
+    display: flex;
+    margin-left: 4%;
+}
+
+.btn-row p {
+    margin-right: 20px;
+    background-color: #f4f4f4;
+    padding: 13px;
+    border-radius: 100px;
+    width: 80px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.btn-row p:hover {
+    background-color: #303030;
+    color: white;
+}
+
 .left-panel {
-            width: 11%;
-            background-color: #f4f4f4;
-            padding: 20px;
+    width: 11%;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+.li-col {
+    list-style-type: none;
+}
+
+li {
+    list-style-type: none;
+}
+
+.filter {
+    margin-bottom: 10px;
+}
+
+.main-panel-container {
+    display: flex;
+    height: 100%;
+}
+
+.right-panel {
+    width: 87%;
+    flex-wrap: wrap;
+}
+
+.rp-col {
+    width: 30%;
+}
+
+.li-inner {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-bottom: 20px;
+}
+
+.li-max-container {
+    display: flex;
+    flex-wrap: wrap;
+    overflow-x: hidden;
+    height: 555px;
+    overflow-y: auto;
+}
+
+.nav-row {
+    display: flex;
+    justify-content: space-between;
+    width: 98%;
+    margin: auto;
+    max-width: 1900px;
+    align-items: center;
+}
+
+.nav-rows {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo-h1 {
+    font-size: 18px;
+    font-weight: 400;
+    color: white;
+}
+nav {
+    background-color: #303030;
+}
+
+body {
+    margin: unset;
+}
+.main-search-input {
+    width: 400px;
+    border-radius: 100px;
+    padding-left: 10px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    border: 1px solid white;
+    background-color: #f4f4f4;
+}
+
+.copy {
+    margin-top: 5px;
+    font-size: 16px;
+}
+
+.copy-2 {
+    margin-top: 5px;
+    font-size: 16px;
+    color: rgb(98, 98, 98);
+}
+
+p.loc-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 9px;
+}
+p.loc-copy {
+    font-size: 17px;
+    color: #6a6a6a;
+    margin-top: unset;
+}
+
+.loc-box {
+    margin-left: 4.2%;
+}
+.content {
+            display: none;
         }
-        .filter {
-            margin-bottom: 10px;
+        .buy {
+            display: block;
         }
 
-        .main-panel-container {
-            display: flex;
-        }
-
-        .right-panel {
-            width: 87%;
-        }
-
+.filter label {
+    cursor: pointer;
+}
 </style>
 <body>
-    <h1>Property Listings</h1>
+
+    <nav>
+
+        <div class="nav-row">
+            <h1 class="logo-h1">Property Listings</h1>
+
+            <div>
+                <div>
+                    <input class="main-search-input" placeholder="Search" />
+                </div>
+            </div>
+
+
+            <div>
+                <div class="nav-rows">
+                    <p>Login/Sign Up</p>
+                    <p>Bell</p>
+                </div>
+            </div>
+        </div>
+    </nav>
 
     <div class="main-panel-container">
         <div class="left-panel">
@@ -49,27 +226,87 @@
             </div>
             <div class="filter">
                 <!-- <input type="checkbox" id="sold" name="sold"> -->
-                <label for="sold">Charts</label>
+                <a href="templates/charts.html">
+                    <label for="sold">Charts</label>
+                </a>
+            </div>
+
+            <div class="filter">
+                <!-- <input type="checkbox" id="sold" name="sold"> -->
+                <label for="sold">Agent</label>
             </div>
         </div>
         <ul class="right-panel">
-            {% for property in properties %}
-            <li>
-                <ul>
-                    {% for key, value in property.items() %}
-                        {% if key == 'primary_photo' %}
-                            <li>
-                                <img class="primary-img" src="{{ value }}" alt="Primary Photo">
-                            </li>
-                        {% else %}
-                            <li>{{ key }}: {{ value }}</li>
-                        {% endif %}
-                    {% endfor %}
-                </ul>
-            </li>
-        {% endfor %}
+
+            <div class="btn-row">
+                <p class="filter-btn" data-filter="buy">Buy</p>
+                <p class="filter-btn" data-filter="sold">Sold</p>
+                <p class="filter-btn" data-filter="rent">Rent</p>
+            </div>
+
+        <div class="loc-box">
+            <p class="loc-title">Boston, MA</p>
+            <p class="loc-copy">100 Properites found in Boston</p>
+        </div>
+
+        <div class="content buy">
+            <div class="li-max-container">
+                {% for property in properties %}
+                <li class="li-col">
+                    <ul class="li-inner">
+                        {% for key, value in property.items() %}
+                            {% if key == 'primary_photo' %}
+                                <li class="rp-col">
+                                    <img class="primary-img" src="{{ value }}" alt="Primary Photo">
+                                </li>
+                            {% elif key == 'street' %}
+                                <li class="copy-2">{{ key }}: {{ value }}</li>
+                            {% elif key == 'style' %}
+                                <li class="copy">{{ key }}: {{ value }}</li>
+                            {% elif key == 'unit' %}
+                                <li class="copy">{{ key }}: {{ value }}</li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                </li>
+            {% endfor %}
+            </div>
+        </div>
+        <div class="content sold">
+            <div class="li-max-container">
+                {% for property in properties2 %}
+                <li class="li-col">
+                    <ul class="li-inner">
+                        {% for key, value in property.items() %}
+                            {% if key == 'primary_photo' %}
+                                <li class="rp-col">
+                                    <img class="primary-img" src="{{ value }}" alt="Primary Photo">
+                                </li>
+                            {% elif key == 'street' %}
+                                <li class="copy-2">{{ key }}: {{ value }}</li>
+                            {% elif key == 'style' %}
+                                <li class="copy">{{ key }}: {{ value }}</li>
+                            {% elif key == 'unit' %}
+                                <li class="copy">{{ key }}: {{ value }}</li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                </li>
+            {% endfor %}
+            </div>
+        </div>
+        <div class="content rent">
+            <h2>Rent Content</h2>
+            <p>This is the content for rent.</p>
+        </div>
+           
+         
         </ul>
 
     </div>
+
+    <footer>
+        <p>footer</p>
+    </footer>
 </body>
 </html>

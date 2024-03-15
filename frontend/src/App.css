@@ -1,0 +1,153 @@
+.primary-img {
+  width: 270px;
+  display: flex;
+  flex-wrap: wrap;
+  height: 175px;
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+
+.primary-img:hover {
+  border: 1px solid black;
+}
+
+.btn-row {
+  display: flex;
+  margin-left: 4%;
+}
+
+.btn-row p {
+  margin-right: 20px;
+  background-color: #f4f4f4;
+  padding: 13px;
+  border-radius: 100px;
+  width: 80px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.btn-row p:hover {
+  background-color: #303030;
+  color: white;
+}
+
+.left-panel {
+  width: 11%;
+  background-color: #f4f4f4;
+  padding: 20px;
+}
+
+.li-col {
+  list-style-type: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+.filter {
+  margin-bottom: 10px;
+}
+
+.main-panel-container {
+  display: flex;
+  height: 100%;
+}
+
+.right-panel {
+  width: 87%;
+  flex-wrap: wrap;
+}
+
+.rp-col {
+  width: 30%;
+}
+
+.li-inner {
+  display: flex;
+  flex-direction: column-reverse;
+  margin-bottom: 20px;
+}
+
+.li-max-container {
+  display: flex;
+  flex-wrap: wrap;
+  overflow-x: hidden;
+  height: 555px;
+  overflow-y: auto;
+}
+
+.nav-row {
+  display: flex;
+  justify-content: space-between;
+  width: 98%;
+  margin: auto;
+  max-width: 1900px;
+  align-items: center;
+}
+
+.nav-rows {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo-h1 {
+  font-size: 18px;
+  font-weight: 400;
+  color: white;
+}
+nav {
+  background-color: #303030;
+}
+
+body {
+  margin: unset;
+}
+.main-search-input {
+  width: 400px;
+  border-radius: 100px;
+  padding-left: 10px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border: 1px solid white;
+  background-color: #f4f4f4;
+}
+
+.copy {
+  margin-top: 5px;
+  font-size: 16px;
+}
+
+.copy-2 {
+  margin-top: 5px;
+  font-size: 16px;
+  color: rgb(98, 98, 98);
+}
+
+p.loc-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 9px;
+}
+p.loc-copy {
+  font-size: 17px;
+  color: #6a6a6a;
+  margin-top: unset;
+}
+
+.loc-box {
+  margin-left: 4.2%;
+}
+.content {
+          display: none;
+      }
+      .buy {
+          display: block;
+      }
+
+.filter label {
+  cursor: pointer;
+}
