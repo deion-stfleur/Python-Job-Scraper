@@ -7,8 +7,25 @@
     border-radius: 10px;
     cursor: pointer;
     border: 1px solid transparent;
+    
   }
   
+  .filter-btn.active {
+    font-weight: bold; /* Example of styling for active filter button */
+}
+
+/* .content {
+    display: none;
+} */
+
+.link {
+    text-decoration: unset;
+    color: black;
+    cursor: pointer;
+}
+.content.buy {
+    display: block;
+}
   
   .primary-img:hover {
     border: 1px solid black;
@@ -46,7 +63,7 @@
   
   .li-col {
     list-style-type: none;
-    width: 30%;
+    /* width: 30%; */
   }
 
   .li-col:first-child {
@@ -75,10 +92,14 @@
   .rp-col {
     width: 30%;
   }
+
+  input {
+    outline: none;
+  }
   
   .li-inner {
-    display: flex;
-    flex-direction: column-reverse;
+    /* display: flex;
+    flex-direction: column-reverse; */
     margin-bottom: 20px;
   }
   
@@ -151,9 +172,9 @@
   .loc-box {
     margin-left: 4.2%;
   }
-  .content {
+  /* .content {
             display: none;
-        }
+        } */
         .buy {
             display: block;
         }
