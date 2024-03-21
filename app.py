@@ -8,6 +8,7 @@ CORS(app)
 @app.route("/api/properties")
 def get_properties():
     properties = scrapeForSale()
+    pass
     return jsonify(properties)
 
 
@@ -24,6 +25,7 @@ def search_properties():
     # Convert DataFrame to a list of dictionaries
     properties_list = properties_df.to_dict(orient='records')
 
+    pass
     return jsonify(properties_list)
 
 @app.route("/api/properties-for-sold")
