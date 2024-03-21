@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import '../Pages/Home.css'
 import SoldPropertiesComp from './SoldPropertiesComp';
 import { useNavigate, Link } from 'react-router-dom';
+import { ColorRing } from 'react-loader-spinner'
 
 function Home() {
     const [properties, setProperties] = useState([]);
@@ -82,8 +83,23 @@ function Home() {
                     <>
                       <div>
             {loading ? (
-                // Display loading text while data is being fetched
-                <p>Loading...</p>
+                <>
+                <div className='loading-container'>
+    
+                <div style={{display: 'block',marginTop: 40, alignItems:'center',textAlign:'center'}}>
+                    <p>Loading Housing Information...</p>
+                <ColorRing
+                visible={true}
+                height="80"
+                width="80"
+                ariaLabel="color-ring-loading"
+                wrapperStyle={{}}
+                wrapperClass="color-ring-wrapper"
+                colors={['#e15b64', '#f47e60', '#f8b26a', '#abbd81', '#849b87']}
+                />
+                </div>
+                </div>
+                </>
             ) : (
                 // Render property list once data is fetched
                 <>

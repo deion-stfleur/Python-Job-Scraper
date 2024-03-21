@@ -57,7 +57,11 @@ footer {
   color: white;
 }
 
-
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 
 .left-panel {
