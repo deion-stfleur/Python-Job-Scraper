@@ -108,6 +108,7 @@ function Home() {
               
                         <li key={property.property_url} className="li-col">
                             <ul className="li-inner">
+                                <div className='box-col'>
                                 {Object.entries(property).map(([key, value]) => {
                                     // Define an array of keys that you want to hide
                                     const keysToHide = ['unit', 'zip_code', 'year_built', 
@@ -139,6 +140,7 @@ function Home() {
                                         </li>
                                     );
                                 })}
+                                </div>
                             </ul>
                         </li>
                   

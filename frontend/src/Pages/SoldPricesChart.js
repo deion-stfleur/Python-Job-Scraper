@@ -51,7 +51,7 @@ const SoldPricesChart = () => {
             data: {
                 labels: propertyIndices,
                 datasets: [{
-                    label: 'Number of Boston Properties Sold at this Price',
+                    label: 'Boston Properties Sold at this Price',
                     data: soldPrices,
                     borderColor: 'rgba(75, 192, 192, 1)',
                     borderWidth: 1,
@@ -92,7 +92,10 @@ const SoldPricesChart = () => {
             </div>
             </>
             ) : (
-            <canvas id="soldPricesChart2" width="800" height="400"></canvas>
+                <>
+                <canvas id="soldPricesChart2" width="800" height="400"></canvas>
+                <p className='beantown-title'>Boston, MA</p>
+                </>
             )}
         </div>
     );

@@ -71,6 +71,11 @@ footer {
   height: 100vh;
 }
 
+.beantown-title {
+  text-align: center;
+  margin-top: 20px;
+}
+
 .link-unset {
   text-decoration: unset;
   cursor: pointer;

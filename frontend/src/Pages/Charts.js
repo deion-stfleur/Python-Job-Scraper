@@ -2,7 +2,8 @@ import React from 'react'
 import '../App.css'
 import { Link } from 'react-router-dom'
 import SoldPricesChart from './SoldPricesChart'
-
+import SoldPricesCA from './SoldPricesCA'
+import SoldPricesNY from './SoldPricesNY'
 
 function Charts() {
   return (
@@ -34,6 +35,10 @@ function Charts() {
         </div>
         <div className='right-panel'>
             <SoldPricesChart />
+            <div style={{display: 'flex', width:'90%'}}>
+            <SoldPricesCA />
+            <SoldPricesNY />
+            </div>
         </div>
         </div>
     </div>

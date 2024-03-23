@@ -12,6 +12,24 @@ def scrapeForSale(location="Boston, MA", listing_type="for_sale", past_days=50):
 
 scrapeForSale()
 
+
+def scrapeForSaleCA(location="San Francisco, CA", listing_type="for_sale", past_days=50):
+    properties_ca = scrape_property(location=location, listing_type=listing_type, past_days=past_days)
+    properties_list_ca = properties_ca.to_dict(orient='records')
+    return properties_list_ca
+
+scrapeForSaleCA()
+
+
+def scrapeForSaleNY(location="New York City, NY", listing_type="for_sale", past_days=50):
+    properties_ny = scrape_property(location=location, listing_type=listing_type, past_days=past_days)
+    properties_list_ny = properties_ny.to_dict(orient='records')
+    return properties_list_ny
+
+scrapeForSaleNY()
+
+
+
 def scrapeForSold(location="Boston, MA", listing_type="sold", past_days=50):
     properties_df = scrape_property(location=location, listing_type=listing_type, past_days=past_days)
     

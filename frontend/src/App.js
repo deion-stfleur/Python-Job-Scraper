@@ -6,6 +6,7 @@ import Search from './Pages/Search';
 import SearchResults from './Pages/SearchResults';
 import PropertyDetails from './Pages/PropertyDetails';
 import Charts from './Pages/Charts';
+import PropertySearch from './Pages/PropertySearch';
 
 function App() {
   return (
@@ -26,8 +27,12 @@ function App() {
 
           <div>
             <div className="nav-rows">
-              <p>Login/Sign Up</p>
-              <p>Bell</p>
+              <div className='log-in-btn'>
+              <p className='lg-text'>Get started</p>
+              </div>
+              <div>
+              {/* <p>Bell</p> */}
+              </div>
             </div>
           </div>
         </div>
@@ -38,9 +43,19 @@ function App() {
         <Route path="/search-results" component={SearchResults} />
         <Route path="/property/:propertyUrl" component={PropertyDetails} />
         <Route path="/Charts" element={<Charts />} />
+        <Route path="/search" element={<PropertySearch />} />
       </Routes>
       <footer>
-        <p>Footer</p>
+        <div>
+          <div className='inner-footer-div'>
+            <p>Home</p>
+            <p>Features</p>
+            <p>Charts</p>
+            <p>About</p>
+          </div>
+          <hr className='inner-line' />
+          <p>2024 Inc.</p>
+        </div>
       </footer>
     </Router>
   );
