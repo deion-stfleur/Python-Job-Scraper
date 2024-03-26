@@ -67,6 +67,7 @@
     width: 80px;
     cursor: pointer;
     border-radius: 100px;
+    margin-left: 16px;
   }
 
   .box-col {

@@ -63,14 +63,16 @@ function Home() {
             </div>
 
             <div className="filter">
-                <label for="sold">Agent</label>
+            <Link className='link' to="/budget">
+                <label for="sold">Budget <br/> Calculations</label>
+                </Link>            
             </div>
         </div>
     <div className='right-panel'>
     <div className="btn-row">
     <p className={activeFilter === 'buy' ? 'filter-btn active' : 'filter-btn'} onClick={() => handleFilterClick('buy')}>Buy</p>
                 <p className={activeFilter === 'sold' ? 'filter-btn active' : 'filter-btn'} onClick={() => handleFilterClick('sold')}>Sold</p>
-                <p className={activeFilter === 'rent' ? 'filter-btn active' : 'filter-btn'} onClick={() => handleFilterClick('rent')}>Rent</p>
+                <p className={activeFilter === 'rent' ? 'filter-btn active' : 'filter-btn'} onClick={() => handleFilterClick('rent')}>Pending</p>
             </div>
 
         <div className="loc-box">

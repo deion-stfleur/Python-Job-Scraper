@@ -30,10 +30,17 @@ function Charts() {
             </div>
 
             <div className="filter">
-                <label for="sold">Agent</label>
+            <Link className='link' to="/budget">
+                <label for="sold">Budget <br/> Calculations</label>
+                </Link>
             </div>
         </div>
         <div className='right-panel'>
+            <div>
+                <div>
+                    <p></p>
+                </div>
+            </div>
             <SoldPricesChart />
             <div style={{display: 'flex', width:'90%'}}>
             <SoldPricesCA />

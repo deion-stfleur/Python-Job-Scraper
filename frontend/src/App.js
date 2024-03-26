@@ -7,6 +7,7 @@ import SearchResults from './Pages/SearchResults';
 import PropertyDetails from './Pages/PropertyDetails';
 import Charts from './Pages/Charts';
 import PropertySearch from './Pages/PropertySearch';
+import Budget from './Pages/Budget';
 
 function App() {
   return (
@@ -27,6 +28,8 @@ function App() {
 
           <div>
             <div className="nav-rows">
+        
+                <p style={{color: 'white', cursor: 'pointer'}}>Sign in</p>
               <div className='log-in-btn'>
               <p className='lg-text'>Get started</p>
               </div>
@@ -44,6 +47,7 @@ function App() {
         <Route path="/property/:propertyUrl" component={PropertyDetails} />
         <Route path="/Charts" element={<Charts />} />
         <Route path="/search" element={<PropertySearch />} />
+        <Route path="/budget" element={<Budget />} />
       </Routes>
       <footer>
         <div>

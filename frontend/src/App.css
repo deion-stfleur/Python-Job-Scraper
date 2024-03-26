@@ -76,6 +76,11 @@ footer {
   margin-top: 20px;
 }
 
+
+.lf-text-white {
+  color: white;
+}
+
 .link-unset {
   text-decoration: unset;
   cursor: pointer;
@@ -133,6 +138,7 @@ li {
 .nav-rows {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .logo-h1 {

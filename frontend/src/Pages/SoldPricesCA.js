@@ -51,7 +51,7 @@ const SoldPricesCA = () => {
             data: {
                 labels: propertyIndices,
                 datasets: [{
-                    label: 'Boston Properties Sold at this Price',
+                    label: 'San Francisco Properties Sold at this Price',
                     data: soldPrices,
                     borderColor: 'rgba(255, 208, 58)',
                     borderWidth: 1,
