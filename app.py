@@ -36,7 +36,9 @@ def login():
     else:
         return jsonify({'error': response['error']['message']}), 401
 
-@app.route("/api/properties")
+
+
+@app.route("/api/properties", methods=['GET'])
 def get_properties():
     properties = scrapeForSale()
     pass
@@ -64,23 +66,23 @@ def search_properties():
     
 
 
-@app.route("/api/properties-for-sold")
+@app.route("/api/properties-for-sold", methods=['GET'])
 def get_sold_properties():
     sold_properties = scrapeForSold()
     return jsonify(sold_properties)
 
-@app.route("/api/pending")
+@app.route("/api/pending", methods=['GET'])
 def get_pending_properties():
     pending_properties = scrapeForPending()
     return jsonify(pending_properties)
 
 
-@app.route("/api/ca-properties-for-sale")
+@app.route("/api/ca-properties-for-sale", methods=['GET'])
 def properties_for_sale_ca():
     ca_properties = scrapeForSaleCA()
     return jsonify(ca_properties)
 
-@app.route("/api/ny-properties-for-sale")
+@app.route("/api/ny-properties-for-sale", methods=['GET'])
 def properties_for_sale_ny():
     ny_properties = scrapeForSaleNY()
     return jsonify(ny_properties)
