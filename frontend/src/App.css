@@ -27,9 +27,9 @@ body {
   min-height: 100%;
 }
 
-#root {
+/* #root {
   flex-grow: 1;
-}
+} */
 footer {
   flex-shrink: 0; /* Prevent the footer from shrinking */
   background-color: #f0f0f0;
@@ -68,7 +68,6 @@ footer {
   width: 11%;
   background-color: #f4f4f4;
   padding: 20px;
-  height: 100vh;
 }
 
 .beantown-title {
