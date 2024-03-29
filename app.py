@@ -38,7 +38,7 @@ def login():
 
 
 
-@app.route("/api/properties", methods=['GET'])
+@app.route("https://propertio-scraper-a6448ad946c5.herokuapp.com/api/properties", methods=['GET'])
 def get_properties():
     properties = scrapeForSale()
     pass
@@ -66,23 +66,23 @@ def search_properties():
     
 
 
-@app.route("/api/properties-for-sold", methods=['GET'])
+@app.route("https://propertio-scraper-a6448ad946c5.herokuapp.com/api/properties-for-sold", methods=['GET'])
 def get_sold_properties():
     sold_properties = scrapeForSold()
     return jsonify(sold_properties)
 
-@app.route("/api/pending", methods=['GET'])
+@app.route("https://propertio-scraper-a6448ad946c5.herokuapp.com/api/pending", methods=['GET'])
 def get_pending_properties():
     pending_properties = scrapeForPending()
     return jsonify(pending_properties)
 
 
-@app.route("/api/ca-properties-for-sale", methods=['GET'])
+@app.route("https://propertio-scraper-a6448ad946c5.herokuapp.com/api/ca-properties-for-sale", methods=['GET'])
 def properties_for_sale_ca():
     ca_properties = scrapeForSaleCA()
     return jsonify(ca_properties)
 
-@app.route("/api/ny-properties-for-sale", methods=['GET'])
+@app.route("https://propertio-scraper-a6448ad946c5.herokuapp.com/api/ny-properties-for-sale", methods=['GET'])
 def properties_for_sale_ny():
     ny_properties = scrapeForSaleNY()
     return jsonify(ny_properties)
