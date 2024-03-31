@@ -17,11 +17,18 @@ import React, { useState } from 'react';
 function App() {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [menuModal, setMenuModal] = useState(false)
 
   // Function to toggle the modal
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
   };
+
+  const openMenu = () => {
+    setMenuModal(!menuModal);
+  }
+
+
   return (
     <Router>
       <nav>
@@ -50,10 +57,30 @@ function App() {
                 {/* <p>Bell</p> */}
               </div>
             </div>
-            <IoMenu className='logo-menu' />
+            <IoMenu onClick={openMenu} className='logo-menu' />
           </div>
         </div>
       </nav>
+
+      {menuModal && (
+        <div className='menu-modal-overlay'>
+          <div className='menu-modal'>
+             <span className="close" onClick={openMenu}>&times;</span>
+             <div className='menu-modal-content'>
+
+              <Link to="/charts" className='link'>
+                <p>Charts</p>
+              </Link>
+
+              <Link to="/budget" className='link'>
+                <p>Budget Calculations</p>
+              </Link>
+
+             </div>
+          </div>
+
+        </div>
+      )}
       {isModalOpen && (
         <div className="modal-overlay">
           <div className="modal">

@@ -354,6 +354,14 @@
       display: block;
     }
 
+    .copy-left {
+      width: unset;
+    }
+
+    .copy-right {
+      width: unset;
+    }
+
     .main-stock-img  {
       display: none;
     }
