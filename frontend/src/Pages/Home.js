@@ -3,6 +3,16 @@ import '../Pages/Home.css'
 import SoldPropertiesComp from './SoldPropertiesComp';
 import { useNavigate, Link } from 'react-router-dom';
 import { ColorRing } from 'react-loader-spinner'
+import { IoIosPricetag } from "react-icons/io";
+import { IoIosPricetags } from "react-icons/io";
+import { MdOutlinePendingActions } from "react-icons/md";
+import { IoStatsChartSharp } from "react-icons/io5";
+import { ImCalculator } from "react-icons/im";
+
+
+
+
+
 
 function Home() {
     const [properties, setProperties] = useState([]);
@@ -40,13 +50,13 @@ function Home() {
       }, []);
   return (
 
-    <div>
+    <div className='full-height'>
     <div className='main-panel-container'>
     <div className="left-panel">
             <h2>Filters</h2>
             <div className="filter">
                
-                <label for="sale">Sale</label>
+                <label for="sale">Sale <IoIosPricetag /></label>
             </div>
             <div className="filter">
               
@@ -57,14 +67,15 @@ function Home() {
             </div>
             <div className="filter">
                <Link className='link' to="/Charts">
-                    <label for="sold">Charts</label>
+                    <label for="sold">Charts <IoStatsChartSharp />
+</label>
                </Link>
               
             </div>
 
             <div className="filter">
             <Link className='link' to="/budget">
-                <label for="sold">Budget <br/> Calculations</label>
+                <label for="sold">Budget <br/> Calculations <ImCalculator /></label>
                 </Link>            
             </div>
         </div>

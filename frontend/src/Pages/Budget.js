@@ -1,6 +1,9 @@
 import React, {useState} from 'react'
 import '../Pages/Home.css'
 import { Link } from 'react-router-dom'
+import { IoStatsChartSharp } from "react-icons/io5";
+import { ImCalculator } from "react-icons/im";
+import { IoIosPricetag } from "react-icons/io";
 
 
 function Budget() {
@@ -59,28 +62,33 @@ function Budget() {
   return (
     <div>
     <div className='main-panel-container'>
-      <div className="left-panel">
-        <h2>Filters</h2>
-        <div className="filter">
-          <label htmlFor="sale">Sale</label>
+    <div className="left-panel">
+            <h2>Filters</h2>
+            <div className="filter">
+               
+                <label for="sale">Sale <IoIosPricetag /></label>
+            </div>
+            <div className="filter">
+              
+                <label for="pending">Pending</label>
+            </div>
+            <div className="filter">
+                <label for="sold">Sold</label>
+            </div>
+            <div className="filter">
+               <Link className='link' to="/Charts">
+                    <label for="sold">Charts <IoStatsChartSharp />
+</label>
+               </Link>
+              
+            </div>
+
+            <div className="filter">
+            <Link className='link' to="/budget">
+                <label for="sold">Budget <br/> Calculations <ImCalculator /></label>
+                </Link>            
+            </div>
         </div>
-        <div className="filter">
-          <label htmlFor="pending">Pending</label>
-        </div>
-        <div className="filter">
-          <label htmlFor="sold">Sold</label>
-        </div>
-        <div className="filter">
-          <Link className='link' to="/Charts">
-            <label htmlFor="sold">Charts</label>
-          </Link>
-        </div>
-        <div className="filter">
-          <Link className='link' to="/budget">
-            <label htmlFor="sold">Budget <br/> Calculations</label>
-          </Link>
-        </div>
-      </div>
       <div className='right-panel'>
         <div className='bget-section'>
           <h1 className='bget-h1'>Budget Calculator</h1>
@@ -140,7 +148,7 @@ function Budget() {
 
 
               </div>
-                <div style={{width: '96%',margin: 'auto', marginBottom: 150}}>
+                <div className='main-stock-img'>
                   <img style={{height: 450, width: '96%', objectFit: 'cover',  boxShadow: '0px 4px 18px 0px rgba(0, 0, 0, 0.17)'}} src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
                 </div>
 
@@ -154,17 +162,17 @@ function Budget() {
 
                 <div className='min-section-right'>
                   <div>
-                    <p>Essential Expenses (60%):</p>
+                    <p className='ms-h1'>Essential Expenses (60%):</p>
                     <p>This category includes necessities like housing, utilities, groceries, transportation, and healthcare. Allocating 60% of your income ensures that your basic needs are covered comfortably. It's crucial to prioritize these expenses to maintain stability and security.</p>
                   </div>
 
                   <div>
-                    <p>Financial Goals (20%):</p>
+                    <p className='ms-h1'>Financial Goals (20%):</p>
                     <p>The next 20% of your income should be directed towards financial goals such as savings, investments, debt repayment, and retirement contributions. Building a robust financial foundation requires consistent saving and smart investment decisions. This portion of your income enables you to plan for the future and achieve long-term financial security.</p>
                   </div>
 
                   <div>
-                    <p>Personal Spending (20%):</p>
+                    <p className='ms-h1'>Personal Spending (20%):</p>
                     <p>The remaining 20% is reserved for personal spending, which encompasses discretionary expenses like dining out, entertainment, hobbies, and travel. While it's essential to enjoy life and indulge in leisure activities, it's equally vital to strike a balance between enjoyment and financial responsibility.</p>
                   </div>
                 </div>

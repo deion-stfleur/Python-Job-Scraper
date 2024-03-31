@@ -32,15 +32,12 @@ body {
 } */
 footer {
   flex-shrink: 0; /* Prevent the footer from shrinking */
-  background-color: #f0f0f0;
+  background-color: #f4f4f4;
   padding: 20px;
   text-align: center;
 }
 
-.btn-row {
-  display: flex;
-  margin-left: 4%;
-}
+
 
 .btn-row p {
   margin-right: 20px;
@@ -63,12 +60,6 @@ footer {
   align-items: center;
 }
 
-
-.left-panel {
-  width: 11%;
-  background-color: #f4f4f4;
-  padding: 20px;
-}
 
 .beantown-title {
   text-align: center;
@@ -102,9 +93,33 @@ li {
   height: 100%;
 }
 
+.city-btn {
+  background-color: #f4f4f4;
+  padding: 8px;
+  border-radius: 100px;
+  width: 24%;
+  text-align: center;
+  margin-bottom: 21px;
+  /* margin: 0 6px; */
+}
+
+p.mc-title {
+  font-size: 20px;
+  line-height: 24px;
+  margin-bottom: 26px;
+}
+
+p.city-text {
+  margin-top: unset;
+  margin-bottom: unset;
+}
+
 .right-panel {
   width: 87%;
   flex-wrap: wrap;
+  height: 100%;
+  min-height: 100vh;
+  overflow-y: auto;
 }
 
 .rp-col {
@@ -125,14 +140,52 @@ li {
   overflow-y: auto;
 }
 
-.nav-row {
+/* Modal CSS */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
   display: flex;
-  justify-content: space-between;
-  width: 98%;
-  margin: auto;
-  max-width: 1900px;
+  justify-content: center;
   align-items: center;
+  z-index: 999; /* Ensure modal appears on top of everything */
 }
+
+.modal {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Shadow effect */
+  position: relative;
+  top: -27%;
+  width: 500px;
+}
+
+.border-line {
+  width: 22%;
+    border-right: 2px solid #dadada;
+}
+
+.full-height {
+  height: 100vh;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.modal-content {
+  /* Add styles for modal content */
+}
+
+
+
 
 .nav-rows {
   display: flex;

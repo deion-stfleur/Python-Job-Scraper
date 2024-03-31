@@ -49,6 +49,7 @@
 .min-section-left {
   width: 50%;
   margin-right: 49px;
+  box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.17);
 }
 
 .min-section-left img {
@@ -158,6 +159,8 @@
     width: 11%;
     background-color: #f4f4f4;
     padding: 20px;
+    min-height: 100vh;
+    overflow-y: auto;
   }
 
   .log-in-btn {
@@ -214,18 +217,18 @@
   }
   
   .filter {
-    margin-bottom: 10px;
+    margin-bottom: 30px;
   }
   
   .main-panel-container {
     display: flex;
     height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    overflow-y: auto;
   }
   
-  .right-panel {
-    width: 87%;
-    flex-wrap: wrap;
-  }
+
   
   .rp-col {
     width: 30%;
@@ -323,3 +326,106 @@
   .filter label {
     cursor: pointer;
   }
+
+  .logo-icon {
+    display: none;
+  }
+
+  .logo-menu {
+    display: none;
+  }
+
+  p.ms-h1 {
+    font-size: 21px;
+    line-height: 24px;
+    font-weight: bold;
+    margin-top: 24px;
+}
+
+.main-stock-img {
+  width: 96%;
+  margin: auto; 
+  margin-bottom: 150px;
+}
+
+
+  @media (max-width: 768px) {
+    .copy-container {
+      display: block;
+    }
+
+    .main-stock-img  {
+      display: none;
+    }
+
+    .min-section-row {
+      display: block;
+    }
+
+    .min-section-left {
+      width: unset;
+      margin-right: unset;
+    }
+
+    .min-section-right {
+      width: unset;
+      margin-top: 60px;
+    }
+  }
+
+  @media (max-width: 992px) {
+    .logo-h1 {
+      color: #fff;
+      font-size: 15px;
+      font-weight: 400;
+      display: none;
+  }
+
+  .logo-menu {
+    display: block;
+    color: white;
+    font-size: 25px;
+  }
+
+  nav {
+    background-color: #303030;
+    padding-bottom: 12px;
+    padding-top: 12px;
+}
+
+  .logo-icon {
+    display: block;
+    color: white;
+    font-size: 25px;
+  }
+  .nav-rows {
+    display: none;
+  }
+
+  .right-panel {
+    width: 90%;
+    margin: auto;
+    height: 100%;
+    min-height: 100vh;
+    overflow-y: auto;
+  }
+  .main-search-input {
+    background-color: #f4f4f4;
+    border: 1px solid #fff;
+    border-radius: 100px;
+    padding-bottom: 4px;
+    padding-left: 10px;
+    padding-top: 4px;
+    width: 200px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.left-panel {
+  display: none;
+}
+.nav-row {
+  width: 90%;
+  margin: auto;
+  max-width: unset;
+}
+}

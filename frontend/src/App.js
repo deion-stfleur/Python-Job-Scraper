@@ -8,19 +8,32 @@ import PropertyDetails from './Pages/PropertyDetails';
 import Charts from './Pages/Charts';
 import PropertySearch from './Pages/PropertySearch';
 import Budget from './Pages/Budget';
+import { BsHouseHeartFill } from "react-icons/bs";
+import { IoMenu } from "react-icons/io5";
+import React, { useState } from 'react';
+
+
 
 function App() {
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // Function to toggle the modal
+  const toggleModal = () => {
+    setIsModalOpen(!isModalOpen);
+  };
   return (
     <Router>
       <nav>
 
         <div className="nav-row">
           <Link className='link-unset' to="/">
-          <h1 className="logo-h1">Property Listings</h1>
+            <h1 className="logo-h1">Property Listings</h1>
+            <BsHouseHeartFill className='logo-icon' />
           </Link>
 
           <div>
-            <div>
+            <div onClick={toggleModal}>
               <Search />
             </div>
           </div>
@@ -28,19 +41,73 @@ function App() {
 
           <div>
             <div className="nav-rows">
-        
-                <p style={{color: 'white', cursor: 'pointer'}}>Sign in</p>
+
+              <p style={{ color: 'white', cursor: 'pointer' }}>Sign in</p>
               <div className='log-in-btn'>
-              <p className='lg-text'>Get started</p>
+                <p className='lg-text'>Get started</p>
               </div>
               <div>
-              {/* <p>Bell</p> */}
+                {/* <p>Bell</p> */}
+              </div>
+            </div>
+            <IoMenu className='logo-menu' />
+          </div>
+        </div>
+      </nav>
+      {isModalOpen && (
+        <div className="modal-overlay">
+          <div className="modal">
+            <span className="close" onClick={toggleModal}>&times;</span>
+            <div className="modal-content">
+              <h2>Search</h2>
+              <p>Select a city.</p>
+
+              <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                <div className='border-line'>
+                  <p>Trending</p>
+                </div>
+
+                <div style={{ width: '70%' }}>
+                  <p className='mc-title'>More Cities</p>
+
+                  <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+
+                    <div className='city-btn'>
+                      <p className='city-text'>Charlotte</p>
+                    </div>
+
+                    <div className='city-btn'>
+                      <p className='city-text'>Miami</p>
+                    </div>
+
+                    <div className='city-btn'>
+                      <p className='city-text'>Chicago</p>
+                    </div>
+                  </div>
+
+                  <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+
+                    <div className='city-btn'>
+                      <p className='city-text'>Austin</p>
+                    </div>
+
+                    <div className='city-btn'>
+                      <p className='city-text'>Atlanta</p>
+                    </div>
+
+                    <div className='city-btn'>
+                      <p className='city-text'>Nashville</p>
+                    </div>
+                  </div>
+
+             
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </nav>
-      
+      )}
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/search-results" component={SearchResults} />

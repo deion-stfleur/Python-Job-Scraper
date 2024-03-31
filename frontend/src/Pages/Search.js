@@ -6,6 +6,10 @@ function Search() {
     const [location, setLocation] = useState('');
     const [properties, setProperties] = useState([]);
     const navigate = useNavigate(); // Use useNavigate() instead of useHistory()
+    
+
+
+
 
     const handleSearch = () => {
         fetch(`http://127.0.0.1:5000/api/search?location=${location}`)
